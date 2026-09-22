@@ -11,9 +11,9 @@ public class FamiliesController(FamilyService svc) : ControllerBase
 {
     [HttpPost] public async Task<FamilyDto> Create(CreateFamilyRequest r, CancellationToken ct) => await svc.CreateAsync(User.UserId(), r, ct);
     [HttpGet("me")] public async Task<ActionResult<FamilyDto>> Mine(CancellationToken ct) => await svc.MineAsync(User.UserId(), ct) is { } f ? f : NoContent();
-    [HttpGet("search/{publicId:regex(^[A-Za-z0-9]{{6,10}}$)}")]
+    [HttpGet("search/{publicId}")]
     public async Task<FamilySearchResult> Search(string publicId, CancellationToken ct) => await svc.SearchAsync(publicId, ct);
-    [HttpPost("join/{publicId:regex(^[A-Za-z0-9]{{6,10}}$)}")]
+    [HttpPost("join/{publicId}")]
     public async Task<IActionResult> RequestJoin(string publicId, CancellationToken ct) { await svc.RequestJoinAsync(User.UserId(), publicId, ct); return Accepted(); }
     [HttpGet("me/members")] public async Task<List<MemberDto>> Members(CancellationToken ct) => await svc.MembersAsync(User.UserId(), ct);
     [HttpPost("me/requests/{userId:guid}/approve")]

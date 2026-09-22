@@ -6,14 +6,12 @@ using MoneyApp.Domain;
 namespace MoneyApp.Application.Auth;
 
 public sealed record RegisterRequest(
-    [property: Required, EmailAddress, StringLength(254)] string Email,
-    [property: Required, StringLength(128, MinimumLength = 10)] string Password,
-    [property: Required, StringLength(100, MinimumLength = 1)] string DisplayName,
-    [property: StringLength(10)] string? LanguageCode);
-public sealed record LoginRequest(
-    [property: Required, StringLength(254)] string Email,
-    [property: Required, StringLength(128)] string Password);
-public sealed record RefreshRequest([property: Required, StringLength(200)] string RefreshToken);
+    string Email,
+    string Password,
+    string DisplayName,
+    string? LanguageCode);
+public sealed record LoginRequest(string Email, string Password);
+public sealed record RefreshRequest(string RefreshToken);
 public sealed record AuthResult(Guid UserId, string DisplayName, string AccessToken, DateTimeOffset AccessExpiresAt, string RefreshToken);
 
 public class AuthService(IAppDbContext db, IPasswordService passwords, ITokenService tokens)

@@ -6,7 +6,7 @@ using MoneyApp.Domain;
 
 namespace MoneyApp.Application.Families;
 
-public sealed record CreateFamilyRequest([property: Required, StringLength(100, MinimumLength = 1)] string Name);
+public sealed record CreateFamilyRequest(string Name);
 public sealed record FamilySearchResult(string PublicId, string Name);
 public sealed record MemberDto(Guid UserId, string DisplayName, MembershipStatus Status, bool IsOwner);
 public sealed record FamilyDto(Guid Id, string PublicId, string Name, bool IsOwner, MembershipStatus MyStatus);

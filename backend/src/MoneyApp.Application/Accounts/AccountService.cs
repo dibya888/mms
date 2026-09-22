@@ -6,11 +6,11 @@ using MoneyApp.Domain;
 namespace MoneyApp.Application.Accounts;
 
 public sealed record CreateAccountRequest(
-    [property: Required] AccountKind Kind,
-    [property: Required, StringLength(100, MinimumLength = 1)] string Name,
-    [property: Required, StringLength(3, MinimumLength = 3)] string CurrencyCode);
+    [param: Required] AccountKind Kind,
+    [param: Required, StringLength(100, MinimumLength = 1)] string Name,
+    [param: Required, StringLength(3, MinimumLength = 3)] string CurrencyCode);
 public sealed record RenameRequest([property: Required, StringLength(100, MinimumLength = 1)] string Name);
-public sealed record SetPermissionsRequest([property: Required] ModulePermissions Permissions);
+public sealed record SetPermissionsRequest([param: Required] ModulePermissions Permissions);
 public sealed record AccountDto(Guid Id, AccountKind Kind, string Name, string CurrencyCode, decimal Balance,
     Guid OwnerUserId, ModulePermissions MyPermissions);
 public sealed record PermissionDto(Guid UserId, string DisplayName, ModulePermissions Permissions);
@@ -19,14 +19,17 @@ public class AccountService(IAppDbContext db, AccessPolicy policy)
 {
     public async Task<AccountDto> CreateAsync(Guid userId, CreateAccountRequest r, CancellationToken ct)
     {
-        if (!await db.Currencies.AnyAsync(c => string.Equals(c.Code, r.CurrencyCode, StringComparison.OrdinalIgnoreCase), ct)) throw AppException.Invalid("Unsupported currency.");
+        var currencyCode = r.CurrencyCode.Trim().ToUpperInvariant();
+
+        if (!await db.Currencies.AnyAsync(c => c.Code == currencyCode, ct))
+            throw AppException.Invalid("Unsupported currency.");
         Guid? familyId = null;
         if (r.Kind == AccountKind.Module)
         {
             familyId = await db.FamilyMembers.Where(m => m.UserId == userId && m.Status == MembershipStatus.Active)
                 .Select(m => (Guid?)m.FamilyId).FirstOrDefaultAsync(ct) ?? throw AppException.Invalid("Join a family first.");
         }
-        var a = new Account { Kind = r.Kind, Name = r.Name.Trim(), CurrencyCode = r.CurrencyCode.ToUpperInvariant(), OwnerUserId = userId, FamilyId = familyId };
+        var a = new Account { Kind = r.Kind, Name = r.Name.Trim(), CurrencyCode = currencyCode, OwnerUserId = userId, FamilyId = familyId };
         db.Accounts.Add(a);
         await db.SaveChangesAsync(ct);
         return ToDto(a, ModulePermissions.View | ModulePermissions.Take | ModulePermissions.Deposit | ModulePermissions.Manage);

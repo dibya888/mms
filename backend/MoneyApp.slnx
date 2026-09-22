@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MoneyApp.Domain/MoneyApp.Domain.csproj" />
+    <Project Path="src/MoneyApp.Application/MoneyApp.Application.csproj" />
+    <Project Path="src/MoneyApp.Infrastructure/MoneyApp.Infrastructure.csproj" />
+    <Project Path="src/MoneyApp.Api/MoneyApp.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MoneyApp.Tests/MoneyApp.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -7,8 +7,8 @@ namespace MoneyApp.Application.Ledger;
 
 public sealed record PostTransactionRequest(
     Guid? FromAccountId, Guid? ToAccountId, Guid? CategoryId,
-    [property: Range(0.0001, 999999999999.0)] decimal Amount,
-    [property: StringLength(500)] string? Note);
+    [param: Range(0.0001, 999999999999.0)] decimal Amount,
+    [param: StringLength(500)] string? Note);
 public sealed record TransactionDto(Guid Id, TransactionType Type, Guid? FromAccountId, Guid? ToAccountId, Guid? CategoryId,
     decimal Amount, string CurrencyCode, string? Note, Guid CreatedByUserId, DateTimeOffset CreatedAt);
 
@@ -117,3 +117,5 @@ public class LedgerService(IAppDbContext db, AccessPolicy policy)
     private static TransactionDto ToDto(LedgerTransaction t) =>
         new(t.Id, t.Type, t.FromAccountId, t.ToAccountId, t.CategoryId, t.Amount, t.CurrencyCode, t.Note, t.CreatedByUserId, t.CreatedAt);
 }
+
+

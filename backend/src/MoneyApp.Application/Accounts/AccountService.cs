@@ -9,7 +9,7 @@ public sealed record CreateAccountRequest(
     [param: Required] AccountKind Kind,
     [param: Required, StringLength(100, MinimumLength = 1)] string Name,
     [param: Required, StringLength(3, MinimumLength = 3)] string CurrencyCode);
-public sealed record RenameRequest([property: Required, StringLength(100, MinimumLength = 1)] string Name);
+public sealed record RenameRequest([param: Required, StringLength(120)] string Name);
 public sealed record SetPermissionsRequest([param: Required] ModulePermissions Permissions);
 public sealed record AccountDto(Guid Id, AccountKind Kind, string Name, string CurrencyCode, decimal Balance,
     Guid OwnerUserId, ModulePermissions MyPermissions);

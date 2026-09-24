@@ -6,3 +6,4 @@ node_modules/
 appsettings.*.local.json
 .idea/
 .vs/
+mobile/installed.apk

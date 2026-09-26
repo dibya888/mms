@@ -2,8 +2,23 @@ import React from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native';
 import { colors, space } from '../theme';
 
-export const Screen = ({ children }: { children: React.ReactNode }) => (
-  <ScrollView style={s.screen} contentContainerStyle={{ padding: space.md, gap: space.md }} keyboardShouldPersistTaps="handled">{children}</ScrollView>
+export const Screen = ({
+  children,
+  centered = false,
+}: {
+  children: React.ReactNode;
+  centered?: boolean;
+}) => (
+  <ScrollView
+    style={s.screen}
+    contentContainerStyle={[
+      { padding: space.md, gap: space.md },
+      centered && { flexGrow: 1, justifyContent: 'center' },
+    ]}
+    keyboardShouldPersistTaps="handled"
+  >
+    {children}
+  </ScrollView>
 );
 export const Card = ({ children }: { children: React.ReactNode }) => <View style={s.card}>{children}</View>;
 export const H = ({ children }: { children: React.ReactNode }) => <Text style={s.h}>{children}</Text>;

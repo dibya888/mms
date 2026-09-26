@@ -1,7 +1,7 @@
 import type { Resources } from './en';
 const es: Resources = {
   common: { cancel: 'Cancelar', save: 'Guardar', create: 'Crear', name: 'Nombre', amount: 'Importe', note: 'Nota', currency: 'Moneda', loading: 'Cargando…', error: 'Algo salió mal', retry: 'Reintentar', logout: 'Cerrar sesión', confirm: 'Confirmar', search: 'Buscar', optional: 'Opcional' },
-  auth: { login: 'Iniciar sesión', register: 'Crear cuenta', email: 'Correo electrónico', password: 'Contraseña', displayName: 'Tu nombre', noAccount: '¿Sin cuenta? Regístrate', haveAccount: '¿Ya tienes cuenta? Inicia sesión', passwordHint: 'Al menos 10 caracteres' },
+  auth: { login: 'Iniciar sesión', register: 'Crear cuenta', email: 'Correo electrónico', password: 'Contraseña', confirmPassword: 'Confirmar contraseña', displayName: 'Tu nombre', noAccount: '¿Sin cuenta? Regístrate', haveAccount: '¿Ya tienes cuenta? Inicia sesión', passwordHint: 'Al menos 10 caracteres' },
   tabs: { accounts: 'Dinero', family: 'Familia', settings: 'Ajustes' },
   accounts: { title: 'Mi dinero', empty: 'Aún no hay nada', new: 'Nueva cuenta', kind: 'Tipo', balance: 'Saldo', due: 'Importe adeudado', history: 'Historial', noTx: 'Sin transacciones', permissions: 'Acceso', Wallet: 'Cartera', Module: 'Módulo familiar', Source: 'Origen', CreditCard: 'Tarjeta de crédito', rename: 'Renombrar' },
   tx: { new: 'Nueva transacción', from: 'De', to: 'A', none: 'Ninguno', category: 'Categoría', customCategory: 'Categoría propia', addCategory: 'Añadir categoría', Income: 'Ingreso', Transfer: 'Transferencia', Expense: 'Gasto', CreditCardPayment: 'Pago de tarjeta' },

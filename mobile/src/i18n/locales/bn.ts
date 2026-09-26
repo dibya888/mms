@@ -1,7 +1,7 @@
 import type { Resources } from './en';
 const bn: Resources = {
   common: { cancel: 'বাতিল', save: 'সংরক্ষণ', create: 'তৈরি করুন', name: 'নাম', amount: 'পরিমাণ', note: 'নোট', currency: 'মুদ্রা', loading: 'লোড হচ্ছে…', error: 'কিছু ভুল হয়েছে', retry: 'আবার চেষ্টা করুন', logout: 'লগ আউট', confirm: 'নিশ্চিত করুন', search: 'খুঁজুন', optional: 'ঐচ্ছিক' },
-  auth: { login: 'লগ ইন', register: 'অ্যাকাউন্ট তৈরি করুন', email: 'ইমেইল', password: 'পাসওয়ার্ড', displayName: 'আপনার নাম', noAccount: 'অ্যাকাউন্ট নেই? নিবন্ধন করুন', haveAccount: 'অ্যাকাউন্ট আছে? লগ ইন করুন', passwordHint: 'কমপক্ষে ১০ অক্ষর' },
+  auth: { login: 'লগ ইন', register: 'অ্যাকাউন্ট তৈরি করুন', email: 'ইমেইল', password: 'পাসওয়ার্ড', confirmPassword: 'পাসওয়ার্ড নিশ্চিত করুন', displayName: 'আপনার নাম', noAccount: 'অ্যাকাউন্ট নেই? নিবন্ধন করুন', haveAccount: 'অ্যাকাউন্ট আছে? লগ ইন করুন', passwordHint: 'কমপক্ষে ১০ অক্ষর' },
   tabs: { accounts: 'টাকা', family: 'পরিবার', settings: 'সেটিংস' },
   accounts: { title: 'আমার টাকা', empty: 'এখনও কিছু নেই', new: 'নতুন অ্যাকাউন্ট', kind: 'ধরন', balance: 'ব্যালেন্স', due: 'বকেয়া', history: 'ইতিহাস', noTx: 'কোনো লেনদেন নেই', permissions: 'অ্যাক্সেস', Wallet: 'ওয়ালেট', Module: 'পারিবারিক মডিউল', Source: 'উৎস', CreditCard: 'ক্রেডিট কার্ড', rename: 'নাম পরিবর্তন' },
   tx: { new: 'নতুন লেনদেন', from: 'থেকে', to: 'প্রতি', none: 'কিছু নয়', category: 'ক্যাটাগরি', customCategory: 'নিজের ক্যাটাগরি', addCategory: 'ক্যাটাগরি যোগ করুন', Income: 'আয়', Transfer: 'স্থানান্তর', Expense: 'খরচ', CreditCardPayment: 'কার্ড পরিশোধ' },

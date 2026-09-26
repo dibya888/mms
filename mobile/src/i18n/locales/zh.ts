@@ -1,7 +1,7 @@
 import type { Resources } from './en';
 const zh: Resources = {
   common: { cancel: '取消', save: '保存', create: '创建', name: '名称', amount: '金额', note: '备注', currency: '币种', loading: '加载中…', error: '出错了', retry: '重试', logout: '退出登录', confirm: '确认', search: '搜索', optional: '可选' },
-  auth: { login: '登录', register: '创建账户', email: '邮箱', password: '密码', displayName: '你的名字', noAccount: '没有账户？注册', haveAccount: '已有账户？登录', passwordHint: '至少 10 个字符' },
+  auth: { login: '登录', register: '创建账户', email: '邮箱', password: '密码', confirmPassword: '确认密码', displayName: '你的名字', noAccount: '没有账户？注册', haveAccount: '已有账户？登录', passwordHint: '至少 10 个字符' },
   tabs: { accounts: '资金', family: '家庭', settings: '设置' },
   accounts: { title: '我的资金', empty: '暂无内容', new: '新建账户', kind: '类型', balance: '余额', due: '应还金额', history: '历史', noTx: '暂无交易', permissions: '权限', Wallet: '钱包', Module: '家庭模块', Source: '来源', CreditCard: '信用卡', rename: '重命名' },
   tx: { new: '新交易', from: '从', to: '到', none: '无', category: '类别', customCategory: '自定义类别', addCategory: '添加类别', Income: '收入', Transfer: '转账', Expense: '支出', CreditCardPayment: '信用卡还款' },

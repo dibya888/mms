@@ -1,7 +1,7 @@
 import type { Resources } from './en';
 const fr: Resources = {
   common: { cancel: 'Annuler', save: 'Enregistrer', create: 'Créer', name: 'Nom', amount: 'Montant', note: 'Note', currency: 'Devise', loading: 'Chargement…', error: 'Une erreur est survenue', retry: 'Réessayer', logout: 'Se déconnecter', confirm: 'Confirmer', search: 'Rechercher', optional: 'Facultatif' },
-  auth: { login: 'Se connecter', register: 'Créer un compte', email: 'E-mail', password: 'Mot de passe', displayName: 'Votre nom', noAccount: 'Pas de compte ? Inscrivez-vous', haveAccount: 'Déjà un compte ? Connectez-vous', passwordHint: 'Au moins 10 caractères' },
+  auth: { login: 'Se connecter', register: 'Créer un compte', email: 'E-mail', password: 'Mot de passe', confirmPassword: 'Confirmer le mot de passe', displayName: 'Votre nom', noAccount: 'Pas de compte ? Inscrivez-vous', haveAccount: 'Déjà un compte ? Connectez-vous', passwordHint: 'Au moins 10 caractères' },
   tabs: { accounts: 'Argent', family: 'Famille', settings: 'Réglages' },
   accounts: { title: 'Mon argent', empty: 'Rien pour le moment', new: 'Nouveau compte', kind: 'Type', balance: 'Solde', due: 'Montant dû', history: 'Historique', noTx: 'Aucune transaction', permissions: 'Accès', Wallet: 'Portefeuille', Module: 'Module familial', Source: 'Source', CreditCard: 'Carte de crédit', rename: 'Renommer' },
   tx: { new: 'Nouvelle transaction', from: 'De', to: 'Vers', none: 'Aucun', category: 'Catégorie', customCategory: 'Catégorie perso', addCategory: 'Ajouter une catégorie', Income: 'Revenu', Transfer: 'Virement', Expense: 'Dépense', CreditCardPayment: 'Paiement de carte' },

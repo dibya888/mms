@@ -20,6 +20,7 @@ export async function clearAuth() { accessToken = null; await clearRefreshToken(
 async function raw(path: string, init: RequestInit, auth: boolean): Promise<Response> {
   const headers: Record<string, string> = { 'Content-Type': 'application/json', Accept: 'application/json' };
   if (auth && accessToken) headers.Authorization = `Bearer ${accessToken}`;
+  console.log('API request:', `${API_BASE_URL}${path}`, init);
   return fetch(`${API_BASE_URL}${path}`, { ...init, headers });
 }
 

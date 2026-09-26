@@ -1,6 +1,6 @@
 const en = {
   common: { cancel: 'Cancel', save: 'Save', create: 'Create', name: 'Name', amount: 'Amount', note: 'Note', currency: 'Currency', loading: 'Loading…', error: 'Something went wrong', retry: 'Retry', logout: 'Log out', confirm: 'Confirm', search: 'Search', optional: 'Optional' },
-  auth: { login: 'Log in', register: 'Create account', email: 'Email', password: 'Password', displayName: 'Your name', noAccount: 'No account? Register', haveAccount: 'Have an account? Log in', passwordHint: 'At least 10 characters' },
+  auth: { login: 'Log in', register: 'Create account', email: 'Email', password: 'Password', confirmPassword: 'Confirm password', displayName: 'Your name', noAccount: 'No account? Register', haveAccount: 'Have an account? Log in', passwordHint: 'At least 10 characters' },
   tabs: { accounts: 'Money', family: 'Family', settings: 'Settings' },
   accounts: { title: 'My money', empty: 'Nothing here yet', new: 'New account', kind: 'Type', balance: 'Balance', due: 'Amount due', history: 'History', noTx: 'No transactions', permissions: 'Access', Wallet: 'Wallet', Module: 'Family module', Source: 'Source', CreditCard: 'Credit card', rename: 'Rename' },
   tx: { new: 'New transaction', from: 'From', to: 'To', none: 'None', category: 'Category', customCategory: 'Custom category', addCategory: 'Add category', Income: 'Income', Transfer: 'Transfer', Expense: 'Expense', CreditCardPayment: 'Card payment' },
